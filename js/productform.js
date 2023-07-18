@@ -14,6 +14,7 @@ $(document).ready(function () {
       processData: false,
       contentType: false,
       success: function (response) {
+        console.log(response);
         if (response.success) {
           $("#productErrorMessage").text("Success: " + response.message);
         } else {

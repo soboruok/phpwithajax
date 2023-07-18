@@ -23,8 +23,7 @@ $fileTmpName = $_FILES['photo']['tmp_name'];
 $fileError = $_FILES['photo']['error'];
 $fileSize = $_FILES['photo']['size'];
 
-// 파일 데이터 읽기
-$fileData = addslashes(file_get_contents($fileTmpName));
+
 
 // 기타 폼 데이터 가져오기
 $category = $_POST['category'];

@@ -5,6 +5,6 @@ session_unset();
 session_destroy(); 
 
 //going back to front page
-header("location: products.php"); 
+header("location: ../products.php"); 
 ?>
 

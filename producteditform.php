@@ -1,7 +1,14 @@
 <?php 
 session_start();  
 
-include './includes/db.php';
+include 'includes/db.php';
+include 'includes/lib.php';
+
+// 사용자가 로그인되어 있지 않은 경우, 로그인 페이지로 리디렉션합니다.
+if (!isUserLoggedIn()) {
+  header("Location: ./index.php");
+  exit();
+}
 
 $productId = $_GET['productId'];
 $sql = "SELECT * FROM products WHERE pid = '$productId'";

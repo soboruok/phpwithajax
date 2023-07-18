@@ -38,6 +38,7 @@ if(empty($userid) || empty($password)){
                 session_start(); 
                 $_SESSION['userId'] = $idNumber; 
                 $_SESSION['userUid'] = $userid;
+                $_SESSION['is_admin'] = 10; //only admin 10 access 
 
                 $error = 'success';
                 $response = array('error' => $error);

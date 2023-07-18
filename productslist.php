@@ -2,6 +2,14 @@
 session_start();  
 
 include './includes/db.php';
+include './includes/lib.php';
+
+// 사용자가 로그인되어 있지 않은 경우, 로그인 페이지로 리디렉션합니다.
+if (!isUserLoggedIn()) {
+  header("Location: ./index.php");
+  exit();
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -75,6 +83,14 @@ include './includes/db.php';
             <div class="container">
                 <div class="row">
                     <div class="col">
+                        <form id="searchForm" class="mb-3">
+                          <div class="input-group">
+                              <span class="input-group-text">Title Search</span>    
+                              <input type="text" class="form-control" id="searchInput" name="search" placeholder="Search...">
+                              <button type="submit" class="btn btn-primary">Search</button>
+                          </div>
+                        </form>
+
                         <table class="table">
                             <thead>
                                 <tr>
@@ -93,8 +109,18 @@ include './includes/db.php';
                             <tbody  class="product-list">
                                 <p id="delresult"></p>
                                 <?php
-                                $sql ="select * from products 
-                                ORDER BY created_at DESC";
+                                // Check if the search form is submitted
+                                  if (isset($_GET['search']) && !empty($_GET['search'])) {
+                                    $search_query = $_GET['search'];
+                                    // Use the search query in the SQL statement
+                                    $sql = "SELECT * FROM products 
+                                            WHERE title LIKE '%$search_query%'
+                                            ORDER BY created_at DESC";
+                                } else {
+                                    $sql = "SELECT * FROM products 
+                                            ORDER BY created_at DESC";
+                                }
+                                
                                 $result = mysqli_query($con, $sql);
                                 if (mysqli_num_rows($result) > 0) 
                                 {

@@ -10,11 +10,11 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="loginUserId" class="form-label">User ID</label>
-                        <input type="text" class="form-control" id="loginUserId" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" name="loginUserId" id="loginUserId" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="loginUserPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="loginUserPassword">
+                        <input type="password" class="form-control" name="loginUserPassword" id="loginUserPassword">
                     </div>
 
                     <!-- <div class="mb-3 form-check">

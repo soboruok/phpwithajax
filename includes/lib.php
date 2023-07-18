@@ -38,6 +38,12 @@ function GetUserNumber($username, $con){
     return $row['userID']; 
 }
 
+// 로그인된 사용자인지 확인하는 함수를 정의합니다.
+function isUserLoggedIn()
+{
+    return $_SESSION['is_admin'] === 10;
+}
+
 
 
 

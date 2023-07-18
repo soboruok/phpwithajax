@@ -28,7 +28,7 @@
         if(isset($_SESSION["userId"]))
         {
     ?>
-        <a href="#" id="signOutLink" style="display: none;">Sign Out</a>
+        <a href="includes/logout.php" >Sign Out</a>
     <?php } else { ?>
         <a class="px-2" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in
         </a>

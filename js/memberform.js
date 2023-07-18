@@ -3,16 +3,21 @@ $(document).ready(function () {
   $("#memberForm").submit(function (e) {
     e.preventDefault();
 
-    var formData = new FormData(this); // 폼 데이터 객체 생성
+    var userID = $("#userID").val();
+    var userEmail = $("#userEmail").val();
+    var userPassword = $("#userPassword").val();
+    var rePassword = $("#rePassword").val();
 
     // Make an AJAX request
     $.ajax({
-      url: "./includes/signup.php", // Replace with the actual PHP script URL for login validation
+      url: "/includes/member.php", // Replace with the actual PHP script URL for login validation
       method: "POST",
-      data: formData,
-      dataType: "json", // JSON으로 응답 처리
-      processData: false,
-      contentType: false,
+      data: {
+        userID: userID,
+        userEmail: userEmail,
+        userPassword: userPassword,
+        rePassword: rePassword,
+      },
       success: function (response) {
         console.log(response);
         if (!response) {

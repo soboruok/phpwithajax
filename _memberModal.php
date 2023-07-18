@@ -5,24 +5,25 @@
                 <h1 class="modal-title fs-5" id="memberModal">Member</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            
             <form id="memberForm">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label for="userID" class="form-label">UserID</label>
-                        <input type="text" class="form-control" id="userID" >
+                        <input type="text" class="form-control" id="userID"  >
                     </div>
                     <div class="mb-3">
                         <label for="userEmail" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp">
+                        <input type="email" class="form-control" id="userEmail"  aria-describedby="emailHelp">
                         
                     </div>
                     <div class="mb-3">
                         <label for="userPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="userPassword">
+                        <input type="password" class="form-control" id="userPassword" >
                     </div>
                     <div class="mb-3">
                         <label for="rePassword" class="form-label">Password Repeat</label>
-                        <input type="password" class="form-control" id="rePassword">
+                        <input type="password" class="form-control" id="rePassword" >
                     </div>
                     <div class="mb-3">
                         <p class="membererrorMessage ">gg</p>
