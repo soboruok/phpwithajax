@@ -31,11 +31,11 @@ function CheckingPassword($username, $password, $con){
 
 //get user unique number
 function GetUserNumber($username, $con){
-    $sql = "SELECT userID FROM users WHERE userID = '$username'";
+    $sql = "SELECT idx FROM users WHERE userID = '$username'";
     $run_query=mysqli_query($con,$sql);
     $row = mysqli_fetch_array($run_query); 
 
-    return $row['userID']; 
+    return $row['idx']; 
 }
 
 // 로그인된 사용자인지 확인하는 함수를 정의합니다.

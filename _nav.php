@@ -14,7 +14,8 @@
         <?php 
         if(isset($_SESSION["userId"]))
         {
-            echo "USER ID : ". $_SESSION["userId"]. " Welcome";
+            echo "USER ID : ". $_SESSION["userID"]. " Welcome";
+            echo $_SESSION['idx'];
         }
         ?>
         </li>

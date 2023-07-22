@@ -36,8 +36,8 @@ if(empty($userid) || empty($password)){
 
                 //세션등록
                 session_start(); 
-                $_SESSION['userId'] = $idNumber; 
-                $_SESSION['userUid'] = $userid;
+                $_SESSION['idx'] = $idNumber; 
+                $_SESSION['userID'] = $userid;
                 $_SESSION['is_admin'] = 10; //only admin 10 access 
 
                 $error = 'success';

@@ -10,6 +10,8 @@ if (!isUserLoggedIn()) {
   exit();
 }
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,13 +84,12 @@ if (!isUserLoggedIn()) {
             <p id="productErrorMessage">dd</p>
                 <select name="category" id="category" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                   <option selected>Select Brand</option>
-                    <option value="Swiss">Swiss</option>
-                    <option value="blacmore">Blackmore</option>
+                    <option value="TheFaceShop">TheFaceShop</option>
                     
                 </select>
                 <select name="section" id="section" class="form-select" aria-label="Default select example">
                     <option value="" selected>Select Section</option>
-                    <option value="vitaminc">vitamin C</option>
+                    <option value="faceMask">face Mask</option>
                     <option value="vitamind">vitamin D</option>
                 </select>
                 <br>
