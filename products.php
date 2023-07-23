@@ -74,25 +74,26 @@ if (!isUserLoggedIn()) {
             <div
               class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
             >
-              <h1 class="h2">Adding Product</h1>
+              <h1 class="h2">Add Receipt</h1>
             </div>
             
             
           
             <div class="table-responsive">
             <form id="productForm" enctype="multipart/form-data">
+              <input type="hidden" name="uidx" value="<?php echo $_SESSION['idx'] ?>">
             <p id="productErrorMessage">dd</p>
-                <select name="category" id="category" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                  <option selected>Select Brand</option>
-                    <option value="TheFaceShop">TheFaceShop</option>
-                    
+                <input type="date" id="date-input" class="form-control mb-3" name="created_at">
+                <select name="category" id="category" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" onchange="updateSections()">
+                  <option selected disabled>Select Brand</option>
+                  <option value="TheFaceShop">TheFaceShop</option>
+                  <option value="blackmore">blackmore</option>
                 </select>
-                <select name="section" id="section" class="form-select" aria-label="Default select example">
+    
+                <select name="section" id="section" class="form-select mb-3" aria-label="Default select example">
                     <option value="" selected>Select Section</option>
-                    <option value="faceMask">face Mask</option>
-                    <option value="vitamind">vitamin D</option>
                 </select>
-                <br>
+
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="title">Title</span>
                   <input type="text"  name="title" id="title" class="form-control" aria-label="Sizing example input" aria-describedby="price">
@@ -128,7 +129,34 @@ if (!isUserLoggedIn()) {
       integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
       crossorigin="anonymous"
     ></script>
+
     
+    <script>
+        function updateSections() {
+            const selectedBrand = document.getElementById("category").value;
+            const sectionSelect = document.getElementById("section");
+
+            // 브랜드 선택에 따라 섹션 선택 목록 변경
+            if (selectedBrand === "TheFaceShop") {
+                sectionSelect.innerHTML = `
+                    <option value="" selected>Select Section</option>
+                    <option value="faceMask">face Mask</option>
+                    <option value="vitaminD">vitamin D</option>
+                `;
+            } else if (selectedBrand === "blackmore") {
+                sectionSelect.innerHTML = `
+                    <option value="" selected>Select Section</option>
+                    <option value="vitaminE">vitamin E</option>
+                    <option value="vitaminA">vitamin A</option>
+                `;
+            } else {
+                // 선택된 브랜드가 없을 경우 섹션 목록 초기화
+                sectionSelect.innerHTML = `
+                    <option value="" selected>Select Section</option>
+                `;
+            }
+        }
+    </script>
 
     <!-- Sign in Modal -->
     <?php include "./_loginModal.php" ?>

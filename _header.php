@@ -25,7 +25,7 @@
     </div> -->
     <div class="nav-item text-nowrap">
     <?php 
-        if(isset($_SESSION["userId"]))
+        if(isset($_SESSION["userID"]))
         {
     ?>
         <a href="includes/logout.php" >Sign Out</a>

@@ -10,6 +10,8 @@ if (!isUserLoggedIn()) {
   exit();
 }
 
+$idx = $_SESSION['idx'];
+
 
 ?>
 <!DOCTYPE html>
@@ -75,7 +77,7 @@ if (!isUserLoggedIn()) {
           <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
-            <h1 class="h2"> List Product</h1>
+            <h1 class="h2"> List Receipts</h1>
           </div>
           
          
@@ -114,13 +116,15 @@ if (!isUserLoggedIn()) {
                                     $search_query = $_GET['search'];
                                     // Use the search query in the SQL statement
                                     $sql = "SELECT * FROM products 
-                                            WHERE title LIKE '%$search_query%'
+                                            WHERE  uidx= $idx and title LIKE '%$search_query%'
                                             ORDER BY created_at DESC";
                                 } else {
                                     $sql = "SELECT * FROM products 
+                                            WHERE uidx = $idx 
                                             ORDER BY created_at DESC";
                                 }
                                 
+                                // echo $sql; 
                                 $result = mysqli_query($con, $sql);
                                 if (mysqli_num_rows($result) > 0) 
                                 {

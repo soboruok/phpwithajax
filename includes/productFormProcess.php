@@ -15,7 +15,6 @@ $response = array();
 $error = '';
 
 
-
 // 이미지 파일 정보 가져오기
 $fileName = $_FILES['photo']['name'];
 $fileType = $_FILES['photo']['type'];
@@ -24,14 +23,17 @@ $fileError = $_FILES['photo']['error'];
 $fileSize = $_FILES['photo']['size'];
 
 
-
 // 기타 폼 데이터 가져오기
+$uidx = $_POST['uidx'];
+$created_at = $_POST['created_at'];
 $category = $_POST['category'];
 $section = $_POST['section'];
 $title = $_POST['title'];
 $price = $_POST['price'];
 $qty = $_POST['qty'];
 $memo = $_POST['memo'];
+
+
 
 //파일 확장자 확인
 $fileExt = explode(".",$fileName);
@@ -50,8 +52,8 @@ if(in_array($fileActualExt, $allowed)){
                 
 
             } else {
-                $sql = "insert into products (category,display, section,title,price,qty,photo,memo,created_at, updated_at) 
-                        values ('$category', 0, '$section', '$title', '$price', '$qty', '$imageFullName' ,'$memo',NOW(), Now()); ";
+                $sql = "insert into products (uidx, category,display, section,title,price,qty,photo,memo,created_at) 
+                        values ('$uidx','$category', 0, '$section', '$title', '$price', '$qty', '$imageFullName' ,'$memo','$created_at'); ";
                 if ($con->query($sql) === true) {
                     move_uploaded_file($fileTmpName, $fileDestination);
                     $response['success'] = true;
