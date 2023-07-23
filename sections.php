@@ -6,11 +6,11 @@ include './includes/lib.php';
 
 // 사용자가 로그인되어 있지 않은 경우, 로그인 페이지로 리디렉션합니다.
 if (!isUserLoggedIn()) {
-  header("Location: ./index.php");
+  header("Location: ./main.php");
   exit();
 }
 
-
+$idx = $_SESSION['idx'];
 
 ?>
 <!DOCTYPE html>
@@ -62,8 +62,8 @@ if (!isUserLoggedIn()) {
     <!-- modal ajax -->
     <script src="./js/memberform.js" defer></script> 
     <script src="./js/loginform.js" defer></script> 
-    <script src="./js/productform.js" defer></script>
-    
+    <script src="./js/sectionform.js" defer></script>
+
   </head>
   <body>
     <?php include "./_header.php" ?>
@@ -76,12 +76,14 @@ if (!isUserLoggedIn()) {
           >
             <h1 class="h2">Add Receipt</h1>
           </div>
+          
           <div class="table-responsive">
-            <form id="productForm" enctype="multipart/form-data">
+            <form id="sectionForm">
               <input type="hidden" name="uidx" value="<?php echo $_SESSION['idx'] ?>">
               <p id="productErrorMessage"  class="btn-success"></p>
-                <input type="date" id="date-input" class="form-control mb-3" name="created_at">
-                <select name="category" id="category" class="form-select form-select-md mb-3" aria-label=".form-select-lg example" onchange="updateSections()">
+
+                <div class="input-group mb-3">
+                <select name="bcategory" id="bcategory" class="form-select form-select-md" aria-label=".form-select-lg example" onchange="updateSections()">
                   <option selected disabled>Select Category</option>
                   <option value="PROPERTY">PROPERTY</option>
                   <option value="WORK">WORK</option>
@@ -89,33 +91,50 @@ if (!isUserLoggedIn()) {
                   <option value="Share">Share</option>
                   <option value="Donation">Donation</option>
                 </select>
-    
-                <select name="section" id="section" class="form-select mb-3" aria-label="Default select example">
-                    <option value="" selected>Select Section</option>
-                </select>
-
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="title">Title</span>
-                  <input type="text"  name="title" id="title" class="form-control" aria-label="Sizing example input" aria-describedby="price">
                 </div>
                 <div class="input-group mb-3">
-                  <span class="input-group-text" id="price">Price</span>
-                  <input type="text"  name="price" id="price" class="form-control" aria-label="Sizing example input" aria-describedby="price">
+                  <span class="input-group-text" id="bsection">Section</span>
+                  <input type="text"  name="bsection" id="bsection" class="form-control" aria-label="Sizing example input" aria-describedby="bsection">
                 </div>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="qty">Q'ty</span>
-                  <input type="text"  name="qty" id="qty" class="form-control" aria-label="Sizing example input" aria-describedby="qty">
-                </div>
-                <div class="mb-3">
-                  <input class="form-control" type="file" id="photo" name="photo">
-                </div>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="memo">Memo</span>
-                  <textarea class="form-control" id="memo"  name="memo" placeholder="memo" required></textarea>
-                </div>
+                
                 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">userIDNumber</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Section</th>
+                    </tr>
+                </thead>
+                <tbody  class="product-list">
+                    <p id="delresult"></p>
+                    <?php
+                    // Check if the search form is submitted
+                    $sql = "SELECT * FROM sections 
+                            WHERE uidx = $idx 
+                            ORDER BY bsection DESC";
+                    // echo $sql; 
+                    $result = mysqli_query($con, $sql);
+                    if (mysqli_num_rows($result) > 0) 
+                    {
+                        while($row = mysqli_fetch_array($result)) 
+                        { 
+                    ?>
+                    <tr class="product">
+                        <td><?php echo $row["uidx"]?></td>
+                        <td><?php echo $row["bcategory"]?></td>
+                        <td><?php echo $row["bsection"]?></td>
+                    </tr>
+                    <?php 
+                        } //end while
+                    } //end if
+                    ?> 
+                </tbody>
+            </table>
           </div>
         </main>
         <?php include "./_footer.php" ?>
@@ -132,32 +151,7 @@ if (!isUserLoggedIn()) {
     ></script>
 
     
-    <script>
-        function updateSections() {
-            const selectedBrand = document.getElementById("category").value;
-            const sectionSelect = document.getElementById("section");
-
-            // 브랜드 선택에 따라 섹션 선택 목록 변경
-            if (selectedBrand === "TheFaceShop") {
-                sectionSelect.innerHTML = `
-                    <option value="" selected>Select Section</option>
-                    <option value="faceMask">face Mask</option>
-                    <option value="vitaminD">vitamin D</option>
-                `;
-            } else if (selectedBrand === "blackmore") {
-                sectionSelect.innerHTML = `
-                    <option value="" selected>Select Section</option>
-                    <option value="vitaminE">vitamin E</option>
-                    <option value="vitaminA">vitamin A</option>
-                `;
-            } else {
-                // 선택된 브랜드가 없을 경우 섹션 목록 초기화
-                sectionSelect.innerHTML = `
-                    <option value="" selected>Select Section</option>
-                `;
-            }
-        }
-    </script>
+   
 
     <!-- Sign in Modal -->
     <?php include "./_loginModal.php" ?>
