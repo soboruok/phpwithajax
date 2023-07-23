@@ -58,6 +58,7 @@ $idx = $_SESSION['idx'];
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet" />
     <link href="index.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
     
     <!-- modal ajax -->
@@ -157,6 +158,7 @@ $idx = $_SESSION['idx'];
             </div>
           </div>
         </main>
+        <?php include "./_footer.php" ?>
       </div>
     </div>
 

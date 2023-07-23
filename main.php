@@ -1,31 +1,41 @@
+<?php 
+session_start();  
 
+include './includes/db.php';
 
-<!doctype html>
+?>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0">
-    <title>Jumbotron example · Bootstrap v5.0</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.84.0" />
+    <title>PocketSaver</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/jumbotron/">
+    <!-- <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.0/examples/album/"
+    /> -->
 
-    
+    <script
+      src="https://kit.fontawesome.com/9eb162ac0d.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Bootstrap core CSS -->
-<link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-<link rel="icon" href="https://getbootstrap.com/docs/5.0/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#7952b3">
-
+    <meta name="theme-color" content="#7952b3" />
 
     <style>
       .bd-placeholder-img {
@@ -42,76 +52,203 @@
         }
       }
     </style>
-
-    
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+    <!-- modal ajax -->
+    <script src="./js/memberform.js" defer></script> 
+    <script src="./js/loginform.js" defer></script> 
   </head>
   <body>
-    
-<main>
-  <div class="container py-4">
-    <header class="pb-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg>
-        <span class="fs-4">Jumbotron example</span>
-      </a>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">
+                Inflation era! To save money, Write your daily household account
+                book. It allows you to track where and how much money you spent,
+                helping you reduce unnecessary expenses. Additionally,
+                organizing receipts daily enables you to file your taxes
+                quickly.
+                <span class="redtext"
+                  >*If a receipt is for tax returns, simply check the tax
+                  returns box when you add your receipts</span
+                >
+              </p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Account</h4>
+              <ul class="list-unstyled">
+                <?php 
+                    if(isset($_SESSION["userID"]))
+                    {
+                ?>
+                <li>
+                  <i class="fas fa-sign-out-alt text-white"></i>
+                  <a href="includes/logout.php" class="px-2 text-white"
+                    >Sign out</a
+                  >
+                </li>
+                <?php } else { ?>
+                <li>
+                  <i class="fas fa-sign-in-alt text-white"></i>
+                  <a
+                    class="px-2 text-white"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#loginModal"
+                    >Sign in
+                  </a>
+                </li>
+                <li>
+                  <i class="fas fa-user-plus text-white"></i>
+                  <a
+                    class="px-2 text-white"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#memberModal"
+                    >Sign up
+                  </a>
+                </li>
+                <?php } ?>
+              </ul>
+            </div>
+        </div>
+      </div>
+      <div class="navbar navbar-light navbarbg shadow-sm">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              aria-hidden="true"
+              class="me-2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+              />
+              <circle cx="12" cy="13" r="4" />
+            </svg>
+            <strong>PocketSaver</strong>
+          </a>
+          
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarHeader"
+            aria-controls="navbarHeader"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
     </header>
 
-    <div class="p-5 mb-4 bg-light rounded-3">
-      <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-        <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-        <button class="btn btn-primary btn-lg" type="button">Example button</button>
-      </div>
-    </div>
-
-    <div class="row align-items-md-stretch">
-      <div class="col-md-6">
-        <div class="h-100 p-5 text-white bg-dark rounded-3">
-          <h2>Change the background</h2>
-          <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
-          <button class="btn btn-outline-light" type="button">Example button</button>
+    <main>
+      <section id="home" class="py-7 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Keeping a daily expense log!</h1>
+            <p class="lead text-muted">
+              Your Financial Companion in the Inflation Era! Always together,
+              wherever you go – the household account book for the inflation
+              era, the shortcut to saving money
+              <!-- </p>
+            <p>
+              <a href="#" class="btn btn-primary my-2">Main call to action</a>
+              <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+            </p> -->
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="h-100 p-5 bg-light border rounded-3">
-          <h2>Add borders</h2>
-          <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-          <button class="btn btn-outline-secondary" type="button">Example button</button>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <!-- START THE FEATURETTES -->
+          <div class="row featurette">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">
+                Take photos and keep records!
+                <i class="fas fa-camera-retro camera-icon"></i>
+                <!-- <span class="text-muted">It’ll blow your mind.</span> -->
+              </h2>
+              <p class="lead">
+                By keeping daily records, you can identify where unnecessary
+                expenses occur and save money
+              </p>
+            </div>
+            <div class="col-md-5">
+              <img src="./imgs/img_box1.jpg" class="mainboximg1" />
+            </div>
+          </div>
+
+          <hr class="featurette-divider" />
+
+          <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+              <h2 class="featurette-heading">
+                Money saved is money earned
+                <i class="fas fa-piggy-bank piggy-bank-icon"></i>
+              </h2>
+              <p class="lead">
+                Through organized receipt management, we can achieve savings and
+                financial goals.
+              </p>
+            </div>
+            <div class="col-md-5 order-md-1">
+              <div class="col-md-5">
+                <img src="./imgs/img_box1.jpg" class="mainboximg1" />
+              </div>
+            </div>
+          </div>
+
+          <hr class="featurette-divider" />
+
+          <div class="row featurette">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">
+                Tax returns become easier.
+                <i class="fas fa-file-invoice-dollar tax-return-icon"></i>
+              </h2>
+              <p class="lead">
+                With such records, there is no need for separate organizing when
+                filing for tax returns later.
+              </p>
+            </div>
+            <div class="col-md-5">
+              <div class="col-md-5">
+                <img src="./imgs/img_box1.jpg" class="mainboximg1" />
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- /END THE FEATURETTES -->
       </div>
-    </div>
+    </main>
 
-    <footer class="pt-3 mt-4 text-muted border-top">
-      &copy; 2021
-    </footer>
-  </div>
-</main>
+    <?php include "./_footer.php" ?>
 
+    <script
+      src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
 
-    
+    <!-- Sign in Modal -->
+    <?php include "./_loginModal.php" ?>
+
+    <!-- Sign up Modal -->
+    <?php include "./_memberModal.php" ?>
   </body>
 </html>

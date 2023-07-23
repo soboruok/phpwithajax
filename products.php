@@ -56,6 +56,7 @@ if (!isUserLoggedIn()) {
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet" />
     <link href="index.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
     
     <!-- modal ajax -->
@@ -67,22 +68,18 @@ if (!isUserLoggedIn()) {
   <body>
     <?php include "./_header.php" ?>
     <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <?php include "./_nav.php" ?>
-          <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div
-              class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-            >
-              <h1 class="h2">Add Receipt</h1>
-            </div>
-            
-            
-          
-            <div class="table-responsive">
+      <div class="row">
+        <?php include "./_nav.php" ?>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2">Add Receipt</h1>
+          </div>
+          <div class="table-responsive">
             <form id="productForm" enctype="multipart/form-data">
               <input type="hidden" name="uidx" value="<?php echo $_SESSION['idx'] ?>">
-            <p id="productErrorMessage">dd</p>
+              <p id="productErrorMessage">dd</p>
                 <input type="date" id="date-input" class="form-control mb-3" name="created_at">
                 <select name="category" id="category" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" onchange="updateSections()">
                   <option selected disabled>Select Brand</option>
@@ -115,11 +112,12 @@ if (!isUserLoggedIn()) {
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
-          </main>
-        </div>
+            </form>
+          </div>
+        </main>
+        <?php include "./_footer.php" ?>
       </div>
+      
     </div>
 
     <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"></script>

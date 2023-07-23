@@ -22,7 +22,7 @@ $(document).ready(function () {
 
         if (response.error === "success") {
           $("#loginModal").modal("hide");
-          location.reload(); // Refresh the browser window after successful login
+          window.location.href = "products.php";
         } else {
           $(".loginerrorMessage").text(response.error);
           $("#loginModal").modal("show");

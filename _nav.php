@@ -1,6 +1,6 @@
 <nav
     id="sidebarMenu"
-    class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+    class="col-md-3 col-lg-2 d-md-block bg-dark collapse"
 >
     <div class="position-sticky pt-3">
     <ul class="nav flex-column">
@@ -9,15 +9,6 @@
                 <span data-feather="home"></span>
                 Dashboard
             </a>
-        </li>
-        <li class="nav-item p-2">
-        <?php 
-        if(isset($_SESSION["userID"]))
-        {
-            echo "USER ID : ". $_SESSION["userID"]. " Welcome";
-            echo $_SESSION['idx'];
-        }
-        ?>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
