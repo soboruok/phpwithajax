@@ -67,7 +67,7 @@ if (!isUserLoggedIn()) {
   </head>
   <body>
     <?php include "./_header.php" ?>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <?php include "./_nav.php" ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">

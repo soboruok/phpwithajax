@@ -154,88 +154,92 @@ include './includes/db.php';
       </div>
     </header>
 
-    <main>
-      <section id="home" class="py-7 text-center container">
-        <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Keeping a daily expense log!</h1>
-            <p class="lead text-muted">
-              Your Financial Companion in the Inflation Era! Always together,
-              wherever you go – the household account book for the inflation
-              era, the shortcut to saving money
-              <!-- </p>
-            <p>
-              <a href="#" class="btn btn-primary my-2">Main call to action</a>
-              <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-            </p> -->
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <!-- START THE FEATURETTES -->
-          <div class="row featurette">
-            <div class="col-md-7">
-              <h2 class="featurette-heading">
-                Take photos and keep records!
-                <i class="fas fa-camera-retro camera-icon"></i>
-                <!-- <span class="text-muted">It’ll blow your mind.</span> -->
-              </h2>
-              <p class="lead">
-                By keeping daily records, you can identify where unnecessary
-                expenses occur and save money
-              </p>
-            </div>
-            <div class="col-md-5">
-              <img src="./imgs/img_box1.jpg" class="mainboximg1" />
-            </div>
-          </div>
-
-          <hr class="featurette-divider" />
-
-          <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-              <h2 class="featurette-heading">
-                Money saved is money earned
-                <i class="fas fa-piggy-bank piggy-bank-icon"></i>
-              </h2>
-              <p class="lead">
-                Through organized receipt management, we can achieve savings and
-                financial goals.
-              </p>
-            </div>
-            <div class="col-md-5 order-md-1">
-              <div class="col-md-5">
-                <img src="./imgs/img_box1.jpg" class="mainboximg1" />
+    <div class="container">
+      <div class="row">
+        <main>
+          <section id="home" class="py-7 text-center container">
+            <div class="row py-lg-5">
+              <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Keeping a daily expense log!</h1>
+                <p class="lead text-muted">
+                  Your Financial Companion in the Inflation Era! Always together,
+                  wherever you go – the household account book for the inflation
+                  era, the shortcut to saving money
+                  <!-- </p>
+                <p>
+                  <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                  <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+                </p> -->
+                </p>
               </div>
             </div>
-          </div>
+          </section>
 
-          <hr class="featurette-divider" />
+          <div class="album py-5">
+            <div class="container">
+              <!-- START THE FEATURETTES -->
+              <div class="row featurette">
+                <div class="col-md-7">
+                  <h2 class="featurette-heading">
+                    Take photos and keep records!
+                    <i class="fas fa-camera-retro camera-icon"></i>
+                    <!-- <span class="text-muted">It’ll blow your mind.</span> -->
+                  </h2>
+                  <p class="lead">
+                    By keeping daily records, you can identify where unnecessary
+                    expenses occur and save money
+                  </p>
+                </div>
+                <div class="col-md-5">
+                  <img src="./imgs/img_box4.jpg" width="300" height="300" />
+                </div>
+              </div>
 
-          <div class="row featurette">
-            <div class="col-md-7">
-              <h2 class="featurette-heading">
-                Tax returns become easier.
-                <i class="fas fa-file-invoice-dollar tax-return-icon"></i>
-              </h2>
-              <p class="lead">
-                With such records, there is no need for separate organizing when
-                filing for tax returns later.
-              </p>
-            </div>
-            <div class="col-md-5">
-              <div class="col-md-5">
-                <img src="./imgs/img_box1.jpg" class="mainboximg1" />
+              <hr class="featurette-divider" />
+
+              <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                  <h2 class="featurette-heading">
+                    Money saved is money earned
+                    <i class="fas fa-piggy-bank piggy-bank-icon"></i>
+                  </h2>
+                  <p class="lead">
+                    Through organized receipt management, we can achieve savings and
+                    financial goals.
+                  </p>
+                </div>
+                <div class="col-md-5 order-md-1">
+                  <div class="col-md-5">
+                    <img src="./imgs/img_box2.jpg"  width="300" height="300" />
+                  </div>
+                </div>
+              </div>
+
+              <hr class="featurette-divider" />
+
+              <div class="row featurette justify-content-center">
+                <div class="col-md-7">
+                  <h2 class="featurette-heading">
+                    Tax returns become easier.
+                    <i class="fas fa-file-invoice-dollar tax-return-icon"></i>
+                  </h2>
+                  <p class="lead">
+                    With such records, there is no need for separate organizing when
+                    filing for tax returns later.
+                  </p>
+                </div>
+                <div class="col-md-5">
+                  <div class="col-md-5">
+                    <img src="./imgs/img_box3.jpg" width="500" height="300" />
+                  </div>
+                </div>
               </div>
             </div>
+            <!-- /END THE FEATURETTES -->
           </div>
-        </div>
-        <!-- /END THE FEATURETTES -->
+        </main>
       </div>
-    </main>
+    </div>
 
     <?php include "./_footer.php" ?>
 

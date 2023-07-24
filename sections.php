@@ -67,14 +67,14 @@ $idx = $_SESSION['idx'];
   </head>
   <body>
     <?php include "./_header.php" ?>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <?php include "./_nav.php" ?>
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
           >
-            <h1 class="h2">Add Receipt</h1>
+            <h1 class="h2">Add Sections</h1>
           </div>
           
           <div class="table-responsive">
@@ -116,7 +116,7 @@ $idx = $_SESSION['idx'];
                     // Check if the search form is submitted
                     $sql = "SELECT * FROM sections 
                             WHERE uidx = $idx 
-                            ORDER BY bsection DESC";
+                            ORDER BY bcategory ASC";
                     // echo $sql; 
                     $result = mysqli_query($con, $sql);
                     if (mysqli_num_rows($result) > 0) 

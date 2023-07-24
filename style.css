@@ -1,6 +1,3 @@
-main {
-  background-color: #f7f5f4;
-}
 #home {
   background: url("./imgs/img_main.jpg") center/cover no-repeat;
   padding: 20px;
@@ -11,9 +8,7 @@ main {
 .redtext {
   color: rgb(245, 182, 182);
 }
-.album {
-  background-color: #fff;
-}
+
 .navbarbg {
   background-color: #f8c6c1;
 }
@@ -21,8 +16,8 @@ main {
   background-color: #f8f1f0;
 }
 
-.mainboximg1 {
-  width: 500px;
+.mainboximg {
+  width: 300px;
 }
 
 .font50 {
