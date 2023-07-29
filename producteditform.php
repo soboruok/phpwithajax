@@ -45,7 +45,7 @@ if ($result) {
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Hugo 0.84.0" />
-    <title>Dashboard Template · Bootstrap v5.0</title>
+    <title>Pocket Saver</title>
 
     <link
       rel="canonical"
@@ -57,8 +57,20 @@ if ($result) {
       href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link href="dashboard.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet" />
 
     <style>
+      .nav-item a {
+        color: #eee;
+        text-decoration: none;
+      }
+
+      .nav-item a:hover {
+        text-decoration: none;
+        color: #ccc;
+      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -73,17 +85,19 @@ if ($result) {
         }
       }
     </style>
-
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet" />
-    <link href="index.css" rel="stylesheet" />
+    
+     <!-- fontawesome -->
+     <script
+      src="https://kit.fontawesome.com/9eb162ac0d.js"
+      crossorigin="anonymous"
+    ></script>
+     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
     
     <!-- modal ajax -->
-    <script src="./js/memberform.js" defer></script> 
-    <script src="./js/loginform.js" defer></script> 
     <script src="./js/producteditProcess.js" defer></script>
-    
+    <script src="./js/sectionprocess.js" defer></script>
+
   </head>
   <body>
     <?php include "./_header.php" ?>
@@ -100,8 +114,8 @@ if ($result) {
           <div class="table-responsive">
           <form id="producteditform" enctype="multipart/form-data">
             <input type="hidden" name="productId" value="<?php echo $productId ?>">
-            <p id="productErrorMessage">dd</p>
-              <select name="category" id="category" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <p id="productErrorMessage"></p>
+              <select name="category" id="category" class="form-select mb-3" aria-label="Default select example">
                 <option selected>Select Brand</option>
                   <option value="Swiss" <?php if ($category == 'Swiss') echo 'selected' ?>>Swiss</option>
                   <option value="blacmore" <?php if ($category == 'blacmore') echo 'selected' ?>>Blackmore</option>
@@ -138,6 +152,7 @@ if ($result) {
             </form>
           </div>
         </main>
+        <?php include "./_footer.php" ?>
       </div>
       
     </div>

@@ -21,9 +21,9 @@ $(document).on("click", "#productDel", function (e) {
       success: function (response) {
         // Parse the JSON string into a JavaScript object
         var result = JSON.parse(response);
-        console.log(result.success);
+        console.log(result.file_message);
 
-        if (result.success) {
+        if (result.file_message) {
           $("#alertModal").modal("hide");
           alert("Product deleted successfully");
           // Remove the deleted product entry from the DOM

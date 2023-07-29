@@ -1,24 +1,74 @@
 <header>
       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
-          <div class="row">
-            <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">About</h4>
-              <p class="text-muted">
-                Inflation era! To save money, Write your daily household account
-                book. It allows you to track where and how much money you spent,
-                helping you reduce unnecessary expenses. Additionally,
-                organizing receipts daily enables you to file your taxes
-                quickly.
-                <span class="redtext"
-                  >*If a receipt is for tax returns, simply check the tax
-                  returns box when you add your receipts</span
-                >
-              </p>
+          <div class="row  d-flex justify-content-center">
+            <div class="col-12 col-md-4 py-4">
+              <h4 class="text-white text-center">Menu</h4>
+                <ul class="nav flex-column text-center">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">
+                          <span data-feather="file"></span>
+                        <?php echo date("Y") ?> Expense List
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="products.php">
+                          <span data-feather="shopping-cart"></span>
+                          Add Receipt
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="productslist.php">
+                          <span data-feather="shopping-cart"></span>
+                          List Receipts
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="sections.php">
+                          <span data-feather="users"></span>
+                          Add Sections
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">
+                          <span data-feather="layers"></span>
+                          Yearly Reports
+                      </a>
+                  </li>
+                </ul>
             </div>
-            <div class="col-sm-4 offset-md-1 py-4">
-              <h4 class="text-white">Account</h4>
-              <ul class="list-unstyled">
+            <div class="col-12 col-md-4 py-4">
+                <h4 class="text-white text-center">Menu</h4>
+                <ul class="nav flex-column text-center">
+                  <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <span data-feather="file-text"></span>
+                      Current month
+                  </a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <span data-feather="file-text"></span>
+                      Last quarter
+                  </a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <span data-feather="file-text"></span>
+                      Social engagement
+                  </a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="#">
+                      <span data-feather="file-text"></span>
+                      Year-end sale
+                  </a>
+                  </li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4 py-4">
+              <h4 class="text-white text-center">Account</h4>
+              <ul class="list-unstyled text-center">
                 <?php 
                     if(isset($_SESSION["userID"]))
                     {

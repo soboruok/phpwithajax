@@ -25,13 +25,7 @@ $idx = $_SESSION['idx'];
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Hugo 0.84.0" />
-    <title>Dashboard Template · Bootstrap v5.0</title>
-
-    <link
-      rel="canonical"
-      href="https://getbootstrap.com/docs/5.0/examples/dashboard/"
-    />
-
+    <title>Pocket Saver</title>
     <!-- Bootstrap core CSS -->
     <link
       href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css"
@@ -39,7 +33,18 @@ $idx = $_SESSION['idx'];
     />
     <!-- Custom CSS -->
     <link href="css/custom.css" rel="stylesheet" />
+    <link href="dashboard.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <style>
+      .nav-item a {
+        color: #eee;
+        text-decoration: none;
+      }
+
+      .nav-item a:hover {
+        text-decoration: underline;
+        color: #666;
+      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -54,16 +59,14 @@ $idx = $_SESSION['idx'];
         }
       }
     </style>
-
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet" />
-    <link href="index.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
     
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/9eb162ac0d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
     <!-- modal ajax -->
-    <script src="./js/memberform.js" defer></script> 
-    <script src="./js/loginform.js" defer></script> 
     <script src="./js/productform.js" defer></script>
     <script src="./js/deleteform.js" defer></script>
     <script src="./js/producteditform.js" defer></script>   <!--move to product Edit form -->
@@ -113,12 +116,12 @@ $idx = $_SESSION['idx'];
                                 <p id="delresult"></p>
                                 <?php
                                 // Check if the search form is submitted
-                                  if (isset($_GET['search']) && !empty($_GET['search'])) {
-                                    $search_query = $_GET['search'];
-                                    // Use the search query in the SQL statement
-                                    $sql = "SELECT * FROM products 
-                                            WHERE  uidx= $idx and title LIKE '%$search_query%'
-                                            ORDER BY created_at DESC";
+                                if (isset($_GET['search']) && !empty($_GET['search'])) {
+                                  $search_query = $_GET['search'];
+                                  // Use the search query in the SQL statement
+                                  $sql = "SELECT * FROM products 
+                                          WHERE  uidx= $idx and title LIKE '%$search_query%'
+                                          ORDER BY created_at DESC";
                                 } else {
                                     $sql = "SELECT * FROM products 
                                             WHERE uidx = $idx 

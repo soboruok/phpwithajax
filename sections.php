@@ -24,7 +24,7 @@ $idx = $_SESSION['idx'];
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Hugo 0.84.0" />
-    <title>Dashboard Template · Bootstrap v5.0</title>
+    <title>Pocket Saver</title>
 
     <link
       rel="canonical"
@@ -36,8 +36,20 @@ $idx = $_SESSION['idx'];
       href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link href="dashboard.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet" />
 
     <style>
+      .nav-item a {
+        color: #eee;
+        text-decoration: none;
+      }
+
+      .nav-item a:hover {
+        text-decoration: none;
+        color: #ccc;
+      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -52,15 +64,16 @@ $idx = $_SESSION['idx'];
         }
       }
     </style>
-
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet" />
-    <link href="index.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
+    
+     <!-- fontawesome -->
+     <script
+      src="https://kit.fontawesome.com/9eb162ac0d.js"
+      crossorigin="anonymous"
+    ></script>
+     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
     
     <!-- modal ajax -->
-    <script src="./js/memberform.js" defer></script> 
     <script src="./js/loginform.js" defer></script> 
     <script src="./js/sectionform.js" defer></script>
 

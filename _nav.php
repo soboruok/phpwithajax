@@ -7,33 +7,33 @@
         
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <span data-feather="file"></span>
-               <?php echo date("Y") ?> Expense List
+            <i class="fas fa-list-ul"></i> 
+               <?php echo date("Y") ?> List
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="products.php">
-                <span data-feather="shopping-cart"></span>
+            <i class="fas fa-plus"></i>
                 Add Receipt
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="productslist.php">
-                <span data-feather="shopping-cart"></span>
+            <i class="fas fa-list-ul"></i> 
                 List Receipts
             </a>
         </li>
         
         <li class="nav-item">
             <a class="nav-link" href="sections.php">
-                <span data-feather="users"></span>
+            <i class="fas fa-plus"></i>
                 Add Sections
             </a>
         </li>
         
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
+            <i class="fas fa-file-alt"></i>
                 Yearly Reports
             </a>
         </li>
@@ -50,26 +50,23 @@
     <ul class="nav flex-column mb-2">
         <li class="nav-item">
         <a class="nav-link" href="#">
-            <span data-feather="file-text"></span>
+        <i class="fas fa-file-alt"></i>
             Current month
         </a>
         </li>
+        
         <li class="nav-item">
         <a class="nav-link" href="#">
-            <span data-feather="file-text"></span>
-            Last quarter
+        <i class="fas fa-file-alt"></i>
+            Past Data List
         </a>
         </li>
+
+        
         <li class="nav-item">
         <a class="nav-link" href="#">
-            <span data-feather="file-text"></span>
+            <i class="fas fa-newspaper"></i>
             Social engagement
-        </a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">
-            <span data-feather="file-text"></span>
-            Year-end sale
         </a>
         </li>
     </ul>

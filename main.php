@@ -15,7 +15,7 @@ include './includes/db.php';
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Hugo 0.84.0" />
-    <title>PocketSaver</title>
+    <title>Pocket Saver</title>
 
     <!-- <link
       rel="canonical"
@@ -38,6 +38,15 @@ include './includes/db.php';
     <meta name="theme-color" content="#7952b3" />
 
     <style>
+      .nav-item a {
+        color: #eee;
+        text-decoration: none;
+      }
+
+      .nav-item a:hover {
+        text-decoration: underline;
+        color: #666;
+      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -60,8 +69,8 @@ include './includes/db.php';
   </head>
   <body>
     <header>
-      <div class="collapse bg-dark" id="navbarHeader">
-          <div class="row">
+      <div class="align-items-center collapse bg-dark" id="navbarHeader">
+          <div class="row d-flex justify-content-between">
             <div class="col-sm-8 col-md-7 py-4">
               <h4 class="text-white">About</h4>
               <p class="text-muted">
@@ -113,6 +122,7 @@ include './includes/db.php';
                 <?php } ?>
               </ul>
             </div>
+          
         </div>
       </div>
       <div class="navbar navbar-light navbarbg shadow-sm">

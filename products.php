@@ -9,9 +9,6 @@ if (!isUserLoggedIn()) {
   header("Location: ./index.php");
   exit();
 }
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +21,7 @@ if (!isUserLoggedIn()) {
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Hugo 0.84.0" />
-    <title>Dashboard Template · Bootstrap v5.0</title>
+    <title>Pocket Saver</title>
 
     <link
       rel="canonical"
@@ -36,8 +33,20 @@ if (!isUserLoggedIn()) {
       href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link href="dashboard.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet" />
 
     <style>
+      .nav-item a {
+        color: #eee;
+        text-decoration: none;
+      }
+
+      .nav-item a:hover {
+        text-decoration: none;
+        color: #ccc;
+      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -52,18 +61,20 @@ if (!isUserLoggedIn()) {
         }
       }
     </style>
-
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet" />
-    <link href="index.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
+    
+     <!-- fontawesome -->
+     <script
+      src="https://kit.fontawesome.com/9eb162ac0d.js"
+      crossorigin="anonymous"
+    ></script>
+     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
     
     <!-- modal ajax -->
-    <script src="./js/memberform.js" defer></script> 
     <script src="./js/loginform.js" defer></script> 
     <script src="./js/productform.js" defer></script>
-    
+    <script src="./js/sectionprocess.js" defer></script>
+
   </head>
   <body>
     <?php include "./_header.php" ?>
@@ -130,41 +141,9 @@ if (!isUserLoggedIn()) {
       integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
       crossorigin="anonymous"
     ></script>
-
-    
-    <script>
-        function updateSections() {
-            const selectedBrand = document.getElementById("category").value;
-            const sectionSelect = document.getElementById("section");
-
-            // 브랜드 선택에 따라 섹션 선택 목록 변경
-            if (selectedBrand === "TheFaceShop") {
-                sectionSelect.innerHTML = `
-                    <option value="" selected>Select Section</option>
-                    <option value="faceMask">face Mask</option>
-                    <option value="vitaminD">vitamin D</option>
-                `;
-            } else if (selectedBrand === "blackmore") {
-                sectionSelect.innerHTML = `
-                    <option value="" selected>Select Section</option>
-                    <option value="vitaminE">vitamin E</option>
-                    <option value="vitaminA">vitamin A</option>
-                `;
-            } else {
-                // 선택된 브랜드가 없을 경우 섹션 목록 초기화
-                sectionSelect.innerHTML = `
-                    <option value="" selected>Select Section</option>
-                `;
-            }
-        }
-    </script>
-
     <!-- Sign in Modal -->
     <?php include "./_loginModal.php" ?>
-
     <!-- Sign up Modal -->
     <?php include "./_memberModal.php" ?>
-
-    
   </body>
 </html>
