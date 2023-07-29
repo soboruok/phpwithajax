@@ -24,7 +24,6 @@ $(document).ready(function () {
           $("#loginModal").modal("hide");
           window.location.href = "products.php";
         } else {
-          $(".loginerrorMessage").text(response.error);
           $("#loginModal").modal("show");
         }
       },

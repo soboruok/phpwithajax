@@ -21,9 +21,7 @@
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">remember</label>
                     </div> -->
-                    <div class="mb-3">
-                        <p class="loginerrorMessage ">gg</p>
-                    </div>
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Login</button>
