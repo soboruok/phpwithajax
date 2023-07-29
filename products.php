@@ -92,7 +92,7 @@ if (!isUserLoggedIn()) {
               <input type="hidden" name="uidx" value="<?php echo $_SESSION['idx'] ?>">
               <p id="productErrorMessage"  class="btn-success"></p>
                 <input type="date" id="date-input" class="form-control mb-3" name="created_at">
-                <select name="category" id="category" class="form-select form-select-md mb-3" aria-label=".form-select-lg example" onchange="updateSections()">
+                <select name="category" id="category" class="form-select form-select-md mb-3" onchange="updateSections()">
                   <option selected disabled>Select Category</option>
                   <option value="PROPERTY">PROPERTY</option>
                   <option value="WORK">WORK</option>
@@ -101,21 +101,21 @@ if (!isUserLoggedIn()) {
                   <option value="Donation">Donation</option>
                 </select>
     
-                <select name="section" id="section" class="form-select mb-3" aria-label="Default select example">
+                <select name="section" id="section" class="form-select mb-3">
                     <option value="" selected>Select Section</option>
                 </select>
 
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="title">Title</span>
-                  <input type="text"  name="title" id="title" class="form-control" aria-label="Sizing example input" aria-describedby="price">
+                  <input type="text"  name="title" id="title" class="form-control">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="price">Price</span>
-                  <input type="text"  name="price" id="price" class="form-control" aria-label="Sizing example input" aria-describedby="price">
+                  <input type="text"  name="price" id="price" class="form-control">
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="qty">Q'ty</span>
-                  <input type="text"  name="qty" id="qty" class="form-control" aria-label="Sizing example input" aria-describedby="qty">
+                  <input type="text"  name="qty" id="qty" class="form-control">
                 </div>
                 <div class="mb-3">
                   <input class="form-control" type="file" id="photo" name="photo">

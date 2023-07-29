@@ -34,6 +34,7 @@ if ($result) {
     echo "Failed to fetch product data: " . mysqli_error($con);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,21 +47,15 @@ if ($result) {
     />
     <meta name="generator" content="Hugo 0.84.0" />
     <title>Pocket Saver</title>
-
-    <link
-      rel="canonical"
-      href="https://getbootstrap.com/docs/5.0/examples/dashboard/"
-    />
-
     <!-- Bootstrap core CSS -->
     <link
       href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet" />
     <link href="dashboard.css" rel="stylesheet" />
-    <!-- Custom styles for this template -->
     <link href="style.css" rel="stylesheet" />
-
     <style>
       .nav-item a {
         color: #eee;
@@ -68,8 +63,8 @@ if ($result) {
       }
 
       .nav-item a:hover {
-        text-decoration: none;
-        color: #ccc;
+        text-decoration: underline;
+        color: #666;
       }
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -86,6 +81,7 @@ if ($result) {
       }
     </style>
     
+    
      <!-- fontawesome -->
      <script
       src="https://kit.fontawesome.com/9eb162ac0d.js"
@@ -96,7 +92,6 @@ if ($result) {
     
     <!-- modal ajax -->
     <script src="./js/producteditProcess.js" defer></script>
-    <script src="./js/sectionprocess.js" defer></script>
 
   </head>
   <body>
@@ -115,29 +110,25 @@ if ($result) {
           <form id="producteditform" enctype="multipart/form-data">
             <input type="hidden" name="productId" value="<?php echo $productId ?>">
             <p id="productErrorMessage"></p>
-              <select name="category" id="category" class="form-select mb-3" aria-label="Default select example">
-                <option selected>Select Brand</option>
-                  <option value="Swiss" <?php if ($category == 'Swiss') echo 'selected' ?>>Swiss</option>
-                  <option value="blacmore" <?php if ($category == 'blacmore') echo 'selected' ?>>Blackmore</option>
-                  
-              </select>
-              <select name="section" id="section" class="form-select" aria-label="Default select example">
-                  <option value="" selected>Select Section</option>
-                  <option value="vitaminc" <?php if ($section == 'vitaminc') echo 'selected' ?>>vitamin C</option>
-                  <option value="vitamind" <?php if ($section == 'vitamind') echo 'selected' ?>>vitamin D</option>
-              </select>
-              <br>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="category">Category</span>
+                <input type="text" value="<?php echo $category ?>" name="category" id="category" class="form-control" disabled>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="section">Section</span>
+                <input type="text" value="<?php echo $section ?>" name="section" id="section" class="form-control" disabled>
+              </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="title">Title</span>
-                <input type="text" value="<?php echo $title ?>" name="title" id="title" class="form-control" aria-label="Sizing example input" aria-describedby="price">
+                <input type="text" value="<?php echo $title ?>" name="title" id="title" class="form-control">
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="price">Price</span>
-                <input type="text" value = "<?php echo $price ?>" name="price" id="price" class="form-control" aria-label="Sizing example input" aria-describedby="price">
+                <input type="text" value = "<?php echo $price ?>" name="price" id="price" class="form-control">
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="qty">Q'ty</span>
-                <input type="text" value = "<?php echo $qty ?>" name="qty" id="qty" class="form-control" aria-label="Sizing example input" aria-describedby="qty">
+                <input type="text" value = "<?php echo $qty ?>" name="qty" id="qty" class="form-control">
               </div>
               <div class="mb-3">
                 <input class="form-control" type="file" id="photo" name="photo">

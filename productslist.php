@@ -136,7 +136,7 @@ $idx = $_SESSION['idx'];
                                     { 
                                 ?>
                                 <tr class="product" data-pid="<?php echo $row["pid"]?>">
-                                    <th scope="row"><?php echo substr($row["created_at"],0,7)?></th>
+                                    <th scope="row"><?php echo substr($row["created_at"],0,10)?></th>
                                     <td><?php echo $row["display"]?></td>
                                     <td><?php echo $row["category"]?></td>
                                     <td><?php echo $row["section"]?></td>
@@ -146,8 +146,8 @@ $idx = $_SESSION['idx'];
                                     <td><img src="productImg/<?php echo $row["photo"]?>" class="img_list"/></td>
                                     <td><?php echo substr($row["memo"],0,30) ?></td>
                                     <td>
-                                        <a href="#" data-pid="<?php echo $row["pid"]?>" id="productEditForm" class="btn btn-success">Edit</a>
-                                        <a href="#" data-pid="<?php echo $row["pid"]?>" id="productDel" class="btn btn-danger">Delete</a>
+                                        <a href="#" data-pid="<?php echo $row["pid"]?>" id="productEditForm" class="btn btn-sm btn-success">Edit</a>
+                                        <a href="#" data-pid="<?php echo $row["pid"]?>" id="productDel" class="btn btn-sm btn-danger">Delete</a>
                                     </td>
                                 </tr>
                                 <?php 

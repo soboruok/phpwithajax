@@ -15,8 +15,6 @@ $fileError = $_FILES['photo']['error'];
 $fileSize = $_FILES['photo']['size'];
 
 // 기타 폼 데이터 가져오기
-$category = $_POST['category'];
-$section = $_POST['section'];
 $title = $_POST['title'];
 $price = $_POST['price'];
 $qty = $_POST['qty'];
@@ -35,9 +33,7 @@ if ($fileError === 0 && in_array($fileActualExt, $allowed)) {
 
         // Perform the update operation with the new file
         $sql = "UPDATE products 
-                SET category = '$category', 
-                    section = '$section',
-                    title = '$title',
+                SET  title = '$title',
                     price = '$price',
                     qty = '$qty',
                     photo = '$imageFullName',
@@ -45,7 +41,24 @@ if ($fileError === 0 && in_array($fileActualExt, $allowed)) {
                 WHERE pid = '$productId'";
 
         if ($con->query($sql) === true) {
+            //move new file
             move_uploaded_file($fileTmpName, $fileDestination);
+            
+
+            //remove old photo
+            $fileFullPath = "../productImg/" . $fileName;
+            
+            if (file_exists($fileFullPath)) {
+                if (unlink($fileFullPath)) {
+                    $response['file_deleted'] = true;
+                    $response['file_message'] = 'File deleted successfully';
+                } else {
+                    $response['file_deleted'] = false;
+                    $response['file_message'] = 'Failed to delete the file';
+                }
+            } 
+
+            
             $response['success'] = true;
             $response['message'] = "Data processed successfully.";
         } else {
@@ -57,9 +70,7 @@ if ($fileError === 0 && in_array($fileActualExt, $allowed)) {
 } else {
     // No new file is uploaded, update the record without changing the file
     $sql = "UPDATE products 
-            SET category = '$category', 
-                section = '$section',
-                title = '$title',
+            SET title = '$title',
                 price = '$price',
                 qty = '$qty',
                 memo = '$memo' 

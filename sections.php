@@ -96,7 +96,7 @@ $idx = $_SESSION['idx'];
               <p id="productErrorMessage"  class="btn-success"></p>
 
                 <div class="input-group mb-3">
-                <select name="bcategory" id="bcategory" class="form-select form-select-md" aria-label=".form-select-lg example" onchange="updateSections()">
+                <select name="bcategory" id="bcategory" class="form-select form-select-md" onchange="updateSections()">
                   <option selected disabled>Select Category</option>
                   <option value="PROPERTY">PROPERTY</option>
                   <option value="WORK">WORK</option>
@@ -107,7 +107,7 @@ $idx = $_SESSION['idx'];
                 </div>
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="bsection">Section</span>
-                  <input type="text"  name="bsection" id="bsection" class="form-control" aria-label="Sizing example input" aria-describedby="bsection">
+                  <input type="text"  name="bsection" id="bsection" class="form-control">
                 </div>
                 
                 

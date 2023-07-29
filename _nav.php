@@ -31,12 +31,6 @@
             </a>
         </li>
         
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-            <i class="fas fa-file-alt"></i>
-                Yearly Reports
-            </a>
-        </li>
     </ul>
 
     <h6
@@ -54,14 +48,6 @@
             Current month
         </a>
         </li>
-        
-        <li class="nav-item">
-        <a class="nav-link" href="#">
-        <i class="fas fa-file-alt"></i>
-            Past Data List
-        </a>
-        </li>
-
         
         <li class="nav-item">
         <a class="nav-link" href="#">

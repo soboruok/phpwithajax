@@ -17,6 +17,7 @@ $(document).ready(function () {
         console.log(response);
         if (response.success) {
           $("#productErrorMessage").text("Success: " + response.message);
+          window.location.href = "productslist.php";
         } else {
           $("#productErrorMessage").text("Error: " + response.message);
         }
